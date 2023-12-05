@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-c1cg^-j%2l-e_-(0+ey030&yvz@^k$x@%w0pwgm#of%)qrqe+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
@@ -56,7 +56,8 @@ ROOT_URLCONF = 'stapi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
+        # 'DIRS': [os.path.join(BASE_DIR, 'frontend/build')],
+        'DIRS':[],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,17 +121,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
+
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
 ]
 # settings.py
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'jawad024.pythonanywhere.com']
 
 CORS_ALLOW_ALL_HEADERS = True
 
