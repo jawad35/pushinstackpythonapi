@@ -124,8 +124,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
 
@@ -133,8 +135,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
 ]
 # settings.py
-
-ALLOWED_HOSTS = ['localhost', 'pushinstack.com', '191.101.0.146']
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+# ALLOWED_HOSTS = ['localhost', 'pushinstack.com', '191.101.0.146']
 
 CORS_ALLOW_ALL_HEADERS = True
 
